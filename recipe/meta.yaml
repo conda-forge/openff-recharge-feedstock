@@ -27,7 +27,7 @@ requirements:
     - jinja2
     - pydantic
     - openff-toolkit-base >=0.14.0
-    - openff-interchange-base
+    - openff-interchange-base >=0.3.18
     - openff-utilities
     - openff-units >=0.2    
     - sqlalchemy
