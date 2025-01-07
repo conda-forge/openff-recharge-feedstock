@@ -14,7 +14,7 @@ build:
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
-  - recharge = openff.recharge.cli:cli
+    - recharge = openff.recharge.cli:cli
 
 requirements:
   host:
@@ -30,10 +30,10 @@ requirements:
     - openff-toolkit-base >=0.14.0
     - openff-interchange-base >=0.3.18
     - openff-utilities
-    - openff-units >=0.2    
+    - openff-units >=0.2
     - sqlalchemy
     - sqlite
-    - rdkit  
+    - rdkit
 
 test:
   requires:
