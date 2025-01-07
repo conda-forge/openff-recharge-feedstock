@@ -1,5 +1,5 @@
 {% set name = "openff-recharge" %}
-{% set version = "0.5.2" %}
+{% set version = "0.5.3" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/openforcefield/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 82bd48c02cd9e9681a99085f8e34a9d71fbac02320df531bb6d38ca3d2ff0033
+  sha256: 676d23c49222d10d50901a1651db71389c47e547a118c3665707f49f051afda2
 
 build:
   noarch: python
@@ -18,10 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - click
     - tqdm
     - jinja2
@@ -35,6 +36,8 @@ requirements:
     - rdkit  
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - openff.recharge
   commands:
