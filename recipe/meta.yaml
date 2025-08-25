@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/openforcefield/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 676d23c49222d10d50901a1651db71389c47e547a118c3665707f49f051afda2
+  sha256: c1336165c8b892fefc4c1577df3a63875f8c6087a04bfe042fb51f2b7b30d69a
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
   - recharge = openff.recharge.cli:cli
@@ -23,6 +23,7 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
+    - importlib_resources
     - click
     - tqdm
     - jinja2
